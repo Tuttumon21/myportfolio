@@ -15,6 +15,8 @@ import Home from "./pages/homepage/Home";
 import Navbar from "./pages/navbarpage/Navbar";
 import About from "./pages/aboutpage/About";
 import Experience from "./pages/experiencepage/Experience";
+import Techstack from "./pages/techstackpage/Techstack";
+import Softtool from "./pages/softtoolpage/Softtool";
 
 function App() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
@@ -54,6 +56,8 @@ function App() {
                 <Home />
                 <About />
                 <Experience/>
+                <Techstack/>
+                <Softtool/>
               </div>
             }
           />
