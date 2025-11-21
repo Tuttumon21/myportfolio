@@ -11,7 +11,14 @@
 /* html, body {
   overflow: hidden;
 } */
-
+input,
+textarea,
+select {
+  cursor: text !important;
+}
+* {
+  cursor: none !important;
+}
 .no-scrollbar {
   scrollbar-width: none;          /* Firefox */
   -ms-overflow-style: none;       /* IE 10+ */

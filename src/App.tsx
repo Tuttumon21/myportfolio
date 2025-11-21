@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Toaster } from "sonner";
 import { useAuthStore } from "./store/authStore";
@@ -17,6 +13,7 @@ import About from "./pages/aboutpage/About";
 import Experience from "./pages/experiencepage/Experience";
 import Techstack from "./pages/techstackpage/Techstack";
 import Softtool from "./pages/softtoolpage/Softtool";
+import { SmoothCursor } from "./components/ui/smooth-cursor";
 
 function App() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
@@ -41,11 +38,9 @@ function App() {
       <Toaster position="top-center" />
 
       {showWelcome && <WelcomeMessage onComplete={() => {}} />}
-
       <Navbar />
-      <main
-        className="relative"
-      >
+      <main className="relative  cursor-none">
+      <SmoothCursor />
         <Routes>
           <Route path="/auth/callback" element={<AuthCallback />} />
 
@@ -55,9 +50,9 @@ function App() {
               <div className="">
                 <Home />
                 <About />
-                <Experience/>
-                <Techstack/>
-                <Softtool/>
+                <Experience />
+                <Techstack />
+                <Softtool />
               </div>
             }
           />
