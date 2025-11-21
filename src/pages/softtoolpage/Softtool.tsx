@@ -11,7 +11,6 @@ import openrouter from "@/assets/icons/openrouter_dark.svg";
 import perplexity from "@/assets/icons/perplexity_wordmark_dark.svg";
 import replit from "@/assets/icons/replit-wordmark-dark.svg";
 import trae from "@/assets/icons/trae-color.svg";
-import vscode from "@/assets/icons/vscode.svg";
 
 const Softtool = () => {
   const techLogos = [

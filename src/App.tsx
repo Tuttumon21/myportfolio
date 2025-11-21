@@ -14,6 +14,7 @@ import Experience from "./pages/experiencepage/Experience";
 import Techstack from "./pages/techstackpage/Techstack";
 import Softtool from "./pages/softtoolpage/Softtool";
 import { SmoothCursor } from "./components/ui/smooth-cursor";
+import Testimonials from "./pages/testimonialpage/Testimonials";
 
 function App() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
@@ -31,7 +32,12 @@ function App() {
   }, [isAuthenticated, isGuest]);
 
   if (!showContent) {
-    return <LoginScreen onLoginSuccess={handleLoginSuccess} />;
+    return (
+      <>
+        <SmoothCursor />
+        <LoginScreen onLoginSuccess={handleLoginSuccess} />
+      </>
+    );
   }
   return (
     <Router>
@@ -39,8 +45,8 @@ function App() {
 
       {showWelcome && <WelcomeMessage onComplete={() => {}} />}
       <Navbar />
-      <main className="relative  cursor-none">
-      <SmoothCursor />
+      <main className="relative cursor-none">
+        <SmoothCursor />
         <Routes>
           <Route path="/auth/callback" element={<AuthCallback />} />
 
@@ -53,6 +59,7 @@ function App() {
                 <Experience />
                 <Techstack />
                 <Softtool />
+                <Testimonials />
               </div>
             }
           />
