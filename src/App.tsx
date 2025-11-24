@@ -15,6 +15,10 @@ import Techstack from "./pages/techstackpage/Techstack";
 import Softtool from "./pages/softtoolpage/Softtool";
 import { SmoothCursor } from "./components/ui/smooth-cursor";
 import Testimonials from "./pages/testimonialpage/Testimonials";
+import Project from "./pages/projectpage/Project";
+import Certificate from "./pages/certificatepage/Certificate";
+import Test from "./pages/testpage/Test";
+import Name from "./pages/namepage/Name";
 
 function App() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
@@ -59,7 +63,12 @@ function App() {
                 <Experience />
                 <Techstack />
                 <Softtool />
+                <Project />
+
+                {/* <Certificate/> */}
+                {/* <Test /> */}
                 <Testimonials />
+                <Name />
               </div>
             }
           />
