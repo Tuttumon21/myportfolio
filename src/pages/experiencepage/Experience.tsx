@@ -163,7 +163,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div id="experience" role="experience" className="w-full">
       <Timeline data={data} />
     </div>
   );

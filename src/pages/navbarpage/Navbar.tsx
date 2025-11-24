@@ -2,21 +2,21 @@ import {StaggeredMenu} from "@/components/StaggeredMenu";
 
 const menuItems = [
   { label: "Home", ariaLabel: "Go to home page", link: "/" },
-  { label: "About", ariaLabel: "Learn about us", link: "/about" },
-  { label: "Experience", ariaLabel: "View my timeline", link: "/experience" },
-  { label: "Project", ariaLabel: "View my projects", link: "/projects" },
+  { label: "About", ariaLabel: "Learn about us", link: "about" },
+  { label: "Experience", ariaLabel: "View my timeline", link: "experience" },
+  { label: "Project", ariaLabel: "View my projects", link: "projects" },
   {
     label: "Testimonials",
     ariaLabel: "View my testimonials",
-    link: "/testimonials",
+    link: "testimonials",
   },
-  { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
+  { label: "Contact", ariaLabel: "Get in touch", link: "contact" },
 ];
 
 const socialItems = [
-  { label: "GitHub", link: "https://github.com" },
-  { label: "LinkedIn", link: "https://linkedin.com" },
-  { label: "Whatsapp", link: "https://wa.me/919310000000" },
+  { label: "GitHub", link: "https://github.com/Tuttumon21" },
+  { label: "LinkedIn", link: "https://www.linkedin.com/in/rakesh-k-r" },
+  { label: "Whatsapp", link: "https://wa.me/919633556219" },
   { label: "Resume", link: "https://rakesh.md" },
 ];
 

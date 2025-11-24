@@ -1,6 +1,6 @@
 import LaserFlow from "@/components/LaserFlow";
 import { useRef } from "react";
-import image from "@/assets/images/icons.png";
+import image from "@/assets/images/icon.jpeg";
 import ScrambledText from "@/components/ScrambledText";
 
 const About = () => {
@@ -8,6 +8,8 @@ const About = () => {
   return (
     <>
       <div
+        id="about"
+        role="about"
         style={{
           height: "800px",
           position: "relative",
@@ -76,17 +78,21 @@ const About = () => {
             speed={0.1}
             scrambleChars=".:"
           >
-            <span className="text-4xl font-bebas">About ME</span><br/><br/>I’m a Jr. Software Developer with 2 years of experience
-            building scalable, user-focused applications across web and cloud
-            platforms. I work with modern stacks including React, Vite, Python,
-            FastAPI, Node.js, PostgreSQL, MongoDB, Docker, AWS, and Kubernetes,
+            <span className="text-4xl font-bebas">About ME</span>
+            <br />
+            <br />
+            I’m a Jr. Software Developer with 2 years of experience building
+            scalable, user-focused applications across web and cloud platforms.
+            I work with modern stacks including React, Vite, Python, FastAPI,
+            Node.js, PostgreSQL, MongoDB, Docker, AWS, and Kubernetes,
             specializing in microservices architecture and end-to-end system
             design.
-            <br/><br/>I value ownership, performance, and long-term
-            maintainability, and I approach every project with a focus on
-            scalability, clean architecture, and great user experience. My goal
-            is to create impactful software that grows smoothly—both technically
-            and for the business it supports.
+            <br />
+            <br />I value ownership, performance, and long-term maintainability,
+            and I approach every project with a focus on scalability, clean
+            architecture, and great user experience. My goal is to create
+            impactful software that grows smoothly—both technically and for the
+            business it supports.
           </ScrambledText>
         </div>
 
