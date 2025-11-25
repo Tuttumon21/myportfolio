@@ -71,7 +71,7 @@ export class AuthService {
                 // 4. Update last login time
                 const { data: updatedUser, error: updateError } = await supabase
                     .from('users')
-                    .update({ last_login_at: new Date().toISOString() })
+                    .update({ last_sign_in: new Date().toISOString() })
                     .eq('id', existingUser.id)
                     .select()
                     .single();
@@ -134,7 +134,7 @@ export class AuthService {
                     email: email,
                     name: name,
                     is_guest: true,
-                    last_login_at: new Date().toISOString()
+                    last_sign_in: new Date().toISOString()
                 })
                 .select()
                 .single()

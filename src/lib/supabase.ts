@@ -16,7 +16,7 @@ export interface User {
     name: string
     avatar_url?: string
     is_guest: boolean
-    last_login_at: string
+    last_sign_in: string
     created_at: string
     updated_at: string
 }

@@ -19,6 +19,7 @@ import Project from "./pages/projectpage/Project";
 import Certificate from "./pages/certificatepage/Certificate";
 import Test from "./pages/testpage/Test";
 import Name from "./pages/namepage/Name";
+import Footer from "./pages/footerpage/Footer";
 
 function App() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
@@ -69,6 +70,7 @@ function App() {
                 {/* <Test /> */}
                 <Testimonials />
                 <Name />
+                <Footer onSignOut={() => setShowContent(false)}/>
               </div>
             }
           />
