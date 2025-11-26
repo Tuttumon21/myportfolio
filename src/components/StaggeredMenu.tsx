@@ -1,6 +1,7 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { LinkPreview } from "./ui/link-preview";
+import { useNavigate } from "react-router-dom";
 
 export interface StaggeredMenuItem {
   label: string;
@@ -47,6 +48,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
+    const navigate = useNavigate();
 
   const panelRef = useRef<HTMLDivElement | null>(null);
   const preLayersRef = useRef<HTMLDivElement | null>(null);
@@ -467,7 +469,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             className="sm-logo flex items-center select-none pointer-events-auto"
             aria-label="Logo"
           >
-            <span className="text-xl font-bebas text-white">Rakesh.md</span>
+            <span onClick={() => navigate("/")} className="text-xl font-bebas text-white">Rakesh.md</span>
           </div>
 
           <button

@@ -1,20 +1,17 @@
 import {
-  FacebookIcon,
   GithubIcon,
-  Grid2X2Plus,
-  InstagramIcon,
   LinkedinIcon,
-  TwitterIcon,
-  YoutubeIcon,
 } from "lucide-react";
 import ProfileDropdown from "./kokonutui/profile-dropdown";
 import { LinkPreview } from "./ui/link-preview";
+import { useNavigate } from "react-router-dom";
 
 interface NavbarProps {
   onSignOut?: () => void;
 }
 
 export function MinimalFooter({ onSignOut }: NavbarProps) {
+  const navigate = useNavigate();
   const year = new Date().getFullYear();
 
   const website = [
@@ -55,7 +52,7 @@ export function MinimalFooter({ onSignOut }: NavbarProps) {
     },
     {
       title: "Progress",
-      href: "#",
+      href: "/progress",
     },
   ];
 
@@ -115,13 +112,13 @@ export function MinimalFooter({ onSignOut }: NavbarProps) {
           <span className="text-muted-foreground mb-1 text-xs">Resources</span>
           <div className="flex flex-col gap-1">
             {resources.map(({ href, title }, i) => (
-              <a
+              <button
                 key={i}
-                className={`w-max py-1 text-sm duration-200 hover:underline`}
-                href={href}
+                className={`w-max py-1 text-sm duration-200 hover:underline text-left`}
+                onClick={() => navigate(href)}
               >
                 {title}
-              </a>
+              </button>
             ))}
           </div>
         </div>
@@ -129,13 +126,13 @@ export function MinimalFooter({ onSignOut }: NavbarProps) {
           <span className="text-muted-foreground mb-1 text-xs">Website</span>
           <div className="flex flex-col gap-1">
             {website.map(({ href, title }, i) => (
-              <a
+              <button
                 key={i}
-                className={`w-max py-1 text-sm duration-200 hover:underline`}
-                href={href}
+                className={`w-max py-1 text-sm duration-200 hover:underline text-left`}
+                onClick={() => navigate(href)}
               >
                 {title}
-              </a>
+              </button>
             ))}
           </div>
         </div>

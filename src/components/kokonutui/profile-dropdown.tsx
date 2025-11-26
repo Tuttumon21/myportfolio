@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { Settings, CreditCard, FileText, LogOut, User } from "lucide-react";
+import {  LogOut } from "lucide-react";
 import { AuthService } from "@/services/authService";
 import { useNavigate } from "react-router-dom";
 import {

@@ -53,7 +53,7 @@ const Home = () => {
 
       <div className="absolute inset-0 flex flex-col gap-2 pointer-events-auto items-end justify-center p-10 right-30">
         {/* Limit width & align left */}
-        <div className="flex flex-col gap-2 pointer-events-auto">
+        <div className="lg:flex flex-col gap-2 pointer-events-auto hidden">
           <ProfileCard
             avatarUrl={profile}
             enableTilt={true}

@@ -16,10 +16,10 @@ import Softtool from "./pages/softtoolpage/Softtool";
 import { SmoothCursor } from "./components/ui/smooth-cursor";
 import Testimonials from "./pages/testimonialpage/Testimonials";
 import Project from "./pages/projectpage/Project";
-import Certificate from "./pages/certificatepage/Certificate";
-import Test from "./pages/testpage/Test";
 import Name from "./pages/namepage/Name";
 import Footer from "./pages/footerpage/Footer";
+import Progress from "./pages/progresspage/Progress";
+import Contact from "./pages/contactpage/Contact";
 
 function App() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
@@ -65,15 +65,14 @@ function App() {
                 <Techstack />
                 <Softtool />
                 <Project />
-
-                {/* <Certificate/> */}
-                {/* <Test /> */}
                 <Testimonials />
+                <Contact />
                 <Name />
-                <Footer onSignOut={() => setShowContent(false)}/>
+                <Footer onSignOut={() => setShowContent(false)} />
               </div>
             }
           />
+          <Route path="/progress" element={<Progress />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

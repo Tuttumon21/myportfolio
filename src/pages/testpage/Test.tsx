@@ -1,9 +1,15 @@
-import React from 'react'
 
 const Test = () => {
   return (
-    <div>Test</div>
-  )
-}
+    <div>
+     <iframe
+            allow="geolocation; microphone; camera"
+            src="https://9t7yum45.forms.app/form/6926f83e9a8ceb000262085a"
 
-export default Test
+            className="w-full h-full border-0"
+          ></iframe>
+    </div>
+  );
+};
+
+export default Test;
