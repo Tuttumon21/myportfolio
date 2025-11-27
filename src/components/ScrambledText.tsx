@@ -74,7 +74,7 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
   return (
     <div
       ref={rootRef}
-      className={`m-[7vw] max-w-full font-mono text-[clamp(14px,4vw,20px)] text-white ${className}`}
+      className={`m-[7vw] max-w-full font-mono text-xs md:text-[clamp(14px,4vw,20px)] text-white ${className}`}
       style={style}
     >
       <p>{children}</p>

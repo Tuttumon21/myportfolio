@@ -2,6 +2,7 @@ import PixelBlast from "@/components/PixelBlast";
 import ProfileCard from "@/components/ProfileCard";
 import SplitText from "@/components/SplitText";
 import profile from "@/assets/images/profile.webp";
+
 const Home = () => {
   return (
     <div className="h-screen relative bg-black">

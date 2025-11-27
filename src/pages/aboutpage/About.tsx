@@ -23,7 +23,7 @@ const About = () => {
           const el = revealImgRef.current;
           if (el) {
             el.style.setProperty("--mx", `${x}px`);
-            el.style.setProperty("--my", `${y + rect.height * 0.5}px`);
+            el.style.setProperty("--my", `${y}px`);
           }
         }}
         onMouseLeave={() => {
@@ -53,26 +53,9 @@ const About = () => {
         />
 
         <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "86%",
-            height: "60%",
-            backgroundColor: "#000",
-            borderRadius: "20px",
-            border: "2px solid #331DE0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            fontSize: "2rem",
-            zIndex: 6,
-          }}
-        >
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[86%] h-[55%] bg-transparent rounded-[20px] border-2 border-[#331DE0] flex items-center justify-center text-white text-2xl z-[6]">
           <ScrambledText
-            className="scrambled-text-demo text-xl font-bebas"
+            className="scrambled-text-demo text-xs font-bebas"
             radius={50}
             duration={1}
             speed={0.1}
@@ -101,15 +84,9 @@ const About = () => {
           src={image}
           alt="Reveal effect"
           loading="lazy"
+          className="opacity-[0.3] md:opacity-60 absolute w-full top-0 z-[5] mix-blend-lighten pointer-events-none"
           style={
             {
-              position: "absolute",
-              width: "100%",
-              top: "-50%",
-              zIndex: 5,
-              mixBlendMode: "lighten",
-              opacity: 0.3,
-              pointerEvents: "none",
               WebkitMaskImage:
                 "radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)",
               maskImage:
