@@ -16,7 +16,7 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
   return (
     <div
       className={cn(
-        "relative grid grid-cols-2 md:grid-cols-4",
+        "relative grid grid-cols-3 md:grid-cols-4",
         className
       )}
       {...props}
@@ -160,6 +160,7 @@ function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
         className="pointer-events-none h-4 select-none md:h-10"
         height={logo.height || "auto"}
         src={logo.src}
+        loading="lazy"
         width={logo.width || "auto"}
       />
       {children}

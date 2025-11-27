@@ -384,6 +384,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             <img
               src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
               alt="Logo"
+              loading="lazy"
               className="sm-logo-img block h-8 w-auto object-contain"
               draggable={false}
               width={110}

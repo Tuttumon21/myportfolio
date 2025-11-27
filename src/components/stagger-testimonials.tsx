@@ -113,6 +113,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       />
       <img
         src={testimonial.imgSrc}
+        loading="lazy"
         alt={`${testimonial.by.split(",")[0]}`}
         className="mb-4 h-14 w-12 bg-muted object-cover object-top rounded-full"
         style={{
@@ -121,7 +122,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       />
       <h3
         className={cn(
-          "text-base sm:text-xl font-medium",
+          "text-xs md:text-xl font-medium",
           isCenter ? "text-foreground" : "text-primary-foreground font-mono"
         )}
       >

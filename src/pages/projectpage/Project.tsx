@@ -1,9 +1,9 @@
 "use client";
-import image1 from "../../assets/images/passwordgeneratorapp.png";
-import image2 from "../../assets/images/triangleweb.png";
-import image3 from "../../assets/images/alanqamarine.png";
-import image4 from "../../assets/images/plagirism.png";
-import image5 from "../../assets/images/zoltbooc.png";
+import image1 from "../../assets/images/passwordgeneratorapp.webp";
+import image2 from "../../assets/images/triangleweb.webp";
+import image3 from "../../assets/images/alanqamarine.webp";
+import image4 from "../../assets/images/plagirism.webp";
+import image5 from "../../assets/images/zoltbooc.webp";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { LinkPreview } from "@/components/ui/link-preview";
 
@@ -13,7 +13,7 @@ const Project = () => {
   ));
 
   return (
-    <div id="projects" role="project" className="w-full h-full bg-black">
+    <div id="projects" role="project" className="w-full h-full bg-black pl-5 py-5">
       <h2 className="max-w-7xl mx-auto text-xl md:text-5xl font-bold text-white font-bebas">
         Projects
       </h2>
@@ -62,6 +62,7 @@ const DummyContent = ({ project }: { project: (typeof data)[0] }) => {
         <img
           src={project.src}
           alt={project.title}
+          loading="lazy"
           height="500"
           width="500"
           className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"

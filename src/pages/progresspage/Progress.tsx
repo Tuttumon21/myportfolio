@@ -4,11 +4,11 @@ import Plannings from "./Plannings";
 
 const Progress = () => {
   return (
-    <div className="bg-black relative h-screen">
-      <div className="fixed top-0 left-0 z-10">
+    <div className="bg-black relative">
+      <div className="h-screen">
         <Logork />
       </div>
-      <div className="absolute z-40 bottom-0">
+      <div className="">
         <Plannings />
       </div>
       {/* <Message /> */}

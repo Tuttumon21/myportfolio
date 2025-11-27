@@ -13,8 +13,8 @@ const Contact = () => {
           Let's build something amazing together
         </p>
       </div>
-      <div className="grid grid-cols-2 grid-rows-2 gap-4 h-screen max-w-7xl mx-auto">
-        <WobbleCard containerClassName="row-span-2 bg-blue-50" className="bg-black pointer-events-auto">
+      <div className="grid md:grid-cols-2 md:grid-rows-2 grid-cols-1 gap-4 h-full md:h-screen max-w-7xl mx-auto">
+        <WobbleCard containerClassName="row-span-2 bg-blue-50" className="bg-black min-h-screen pointer-events-auto">
           <iframe
             allow="geolocation; microphone; camera"
             src="https://9t7yum45.forms.app/form/6926f83e9a8ceb000262085a"
@@ -68,41 +68,41 @@ const Contact = () => {
           <div className="flex flex-col gap-3">
             <button
               onClick={() =>
-                (window.location.href = "mailto:rakeshkr@example.com")
+                (window.location.href = "mailto:mrrak007kr@gmail.com")
               }
               className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center gap-3 text-white hover:bg-white/20 transition-colors cursor-pointer"
             >
               <Mail className="w-5 h-5" />
-              <span className="text-sm">rakeshkr@example.com</span>
+              <span className="text-sm">mrrak007kr@gmail.com</span>
             </button>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center gap-3 text-white">
               <MapPin className="w-5 h-5" />
               <span className="text-sm">Kerala, India</span>
             </div>
             <button
-              onClick={() => (window.location.href = "tel:+911234567890")}
+              onClick={() => (window.location.href = "tel:+919633556219")}
               className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center gap-3 text-white hover:bg-white/20 transition-colors cursor-pointer"
             >
               <Phone className="w-5 h-5" />
-              <span className="text-sm">+91 1234567890</span>
+              <span className="text-sm">+91 Phone Number</span>
             </button>
             <button
               onClick={() =>
-                window.open("https://www.linkedin.com/in/rakesh-k-r", "_blank")
+                window.open("https://www.linkedin.com/in/rakesh-k-r", "_blank","noopener noreferrer")
               }
               className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center gap-3 text-white hover:bg-white/20 transition-colors cursor-pointer"
             >
               <Linkedin className="w-5 h-5" />
-              <span className="text-sm">linkedin.com/in/rakesh-k-r</span>
+              <span className="text-sm">Linkedin</span>
             </button>
             <button
               onClick={() =>
-                window.open("https://github.com/tuttumon21", "_blank")
+                window.open("https://github.com/tuttumon21", "_blank", "noopener noreferrer")
               }
               className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center gap-3 text-white hover:bg-white/20 transition-colors cursor-pointer"
             >
               <Github className="w-5 h-5" />
-              <span className="text-sm">github.com/tuttumon21</span>
+              <span className="text-sm">GitHub</span>
             </button>
           </div>
         </WobbleCard>

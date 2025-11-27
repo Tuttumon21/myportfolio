@@ -1,5 +1,5 @@
 import GridDistortion from "@/components/GridDistortion";
-import coverimage from "@/assets/images/cover.png"
+import coverimage from "@/assets/images/cover.webp"
 
 const Name = () => {
   return (

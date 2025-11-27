@@ -83,10 +83,10 @@ export function MinimalFooter({ onSignOut }: NavbarProps) {
     // },
   ];
   return (
-    <footer className="relative text-white">
+    <footer role="footer" className="relative text-white">
       <div className="bg-border absolute inset-x-0 h-px w-full" />
       <div className="grid grid-cols-10 gap-6 p-4">
-        <div className="col-span-6 flex flex-col gap-5 md:col-span-8">
+        <div className="col-span-8 flex flex-col gap-5 md:col-span-8">
           <ProfileDropdown onSignOut={onSignOut}/>
 
           <p className="text-muted-foreground max-w-sm font-bebas text-sm text-balance">

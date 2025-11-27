@@ -6,7 +6,7 @@ const Experience = () => {
       title: "NOW",
       content: (
         <div>
-          <p className="text-slate-50 text-xs md:text-2xl font-normal mb-8">
+          <p className="text-slate-50 text-sm md:text-2xl font-normal mb-8">
             Jr. Software Engineer
           </p>
           <div className="mb-8 text-slate-200">
@@ -32,7 +32,7 @@ const Experience = () => {
       title: "2024 SEP",
       content: (
         <div>
-          <p className="text-slate-50 text-xs md:text-2xl font-normal mb-1">
+          <p className="text-slate-50 text-sm md:text-2xl font-normal mb-1">
             Junior Developer at Triangle Software Solutions LTD
           </p>
           <p className="text-slate-50 text-xs md:text-sm font-normal mb-1">
@@ -66,7 +66,7 @@ const Experience = () => {
       title: "2024 JUN",
       content: (
         <div>
-          <p className="text-slate-50 text-xs md:text-2xl font-normal mb-1">
+          <p className="text-slate-50 text-sm md:text-2xl font-normal mb-1">
             Python Developer at GVR BUSINESS TRANSFORMS
           </p>
            <p className="text-slate-50 text-xs md:text-sm font-normal mb-1">
@@ -98,7 +98,7 @@ const Experience = () => {
       title: "2024 APR",
       content: (
         <div>
-          <p className="text-slate-50 text-xs md:text-2xl font-normal mb-1">
+          <p className="text-slate-50 text-sm md:text-2xl font-normal mb-1">
             IT Support + Customer Relationship at I-NET SECURE LABS PRIVATE
             LIMITED
           </p>
@@ -132,7 +132,7 @@ const Experience = () => {
       title: "2023 MAY",
       content: (
         <div>
-          <p className="text-slate-50 text-xs md:text-2xl font-normal mb-1">    
+          <p className="text-slate-50 text-sm md:text-2xl font-normal mb-1">    
             Data Science Intern at iDatalytics
           </p>
            <p className="text-slate-50 text-xs md:text-sm font-normal mb-1">

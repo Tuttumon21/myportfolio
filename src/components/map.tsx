@@ -68,6 +68,7 @@ export function WorldMap({
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full pointer-events-none select-none object-cover"
         alt="world map"
+        loading="lazy"
         draggable={false}
       />
       <svg

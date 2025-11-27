@@ -83,6 +83,7 @@ export function ExpandableCard({
                   <img
                     src={src}
                     alt={title}
+                    loading="lazy"
                     className="h-80 w-full object-cover object-center"
                   />
                 </div>
@@ -163,6 +164,7 @@ export function ExpandableCard({
             <img
               src={src}
               alt={title}
+              loading="lazy"
               className="h-56 w-64 rounded-lg object-cover object-center"
             />
           </motion.div>

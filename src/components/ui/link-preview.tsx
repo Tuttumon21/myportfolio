@@ -82,6 +82,7 @@ export const LinkPreview = ({
             src={src}
             width={width}
             height={height}
+            loading="lazy"
             alt="hidden image"
           />
         </div>
@@ -137,6 +138,7 @@ export const LinkPreview = ({
                     src={isStatic ? imageSrc : src}
                     width={width}
                     height={height}
+                    loading="lazy"
                     className="rounded-lg"
                     alt="preview image"
                   />

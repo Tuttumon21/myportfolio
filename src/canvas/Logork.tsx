@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import logoImage from '../assets/images/logork.png';
+import logoImage from '../assets/images/logork.webp';
 
 const Logork = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

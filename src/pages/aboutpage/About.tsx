@@ -1,6 +1,6 @@
 import LaserFlow from "@/components/LaserFlow";
 import { useRef } from "react";
-import image from "@/assets/images/icon.jpeg";
+import image from "@/assets/images/icons.webp";
 import ScrambledText from "@/components/ScrambledText";
 
 const About = () => {
@@ -100,6 +100,7 @@ const About = () => {
           ref={revealImgRef}
           src={image}
           alt="Reveal effect"
+          loading="lazy"
           style={
             {
               position: "absolute",

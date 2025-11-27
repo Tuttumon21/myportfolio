@@ -126,6 +126,7 @@ export default function ProfileDropdown({
                       alt={data.name}
                       width={36}
                       height={36}
+                      loading="lazy"
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
