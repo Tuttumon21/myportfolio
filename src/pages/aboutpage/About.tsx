@@ -52,8 +52,7 @@ const About = () => {
           wispDensity={2}
         />
 
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[86%] h-[55%] bg-transparent rounded-[20px] border-2 border-[#331DE0] flex items-center justify-center text-white text-2xl z-[6]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[86%] h-[53%] bg-transparent rounded-[20px] border-2 border-[#331DE0] flex items-center justify-center text-white text-2xl z-[6]">
           <ScrambledText
             className="scrambled-text-demo text-xs font-bebas"
             radius={50}
@@ -64,18 +63,20 @@ const About = () => {
             <span className="text-4xl font-bebas">About ME</span>
             <br />
             <br />
-            I’m a Jr. Software Developer with 2 years of experience building
-            scalable, user-focused applications across web and cloud platforms.
-            I work with modern stacks including React, Vite, Python, FastAPI,
-            Node.js, PostgreSQL, MongoDB, Docker, AWS, and Kubernetes,
-            specializing in microservices architecture and end-to-end system
-            design.
-            <br />
-            <br />I value ownership, performance, and long-term maintainability,
-            and I approach every project with a focus on scalability, clean
-            architecture, and great user experience. My goal is to create
-            impactful software that grows smoothly—both technically and for the
-            business it supports.
+            <p className="break-normal whitespace-normal">
+              I’m a Jr. Software Developer with 2 years of experience building
+              scalable, user-focused applications across web and cloud
+              platforms. I work with modern stacks including React, Vite,
+              Python, FastAPI, Node.js, PostgreSQL, MongoDB, Docker, AWS, and
+              Kubernetes, specializing in microservices architecture and
+              end-to-end system design.
+              <br />
+              <br />I value ownership, performance, and long-term
+              maintainability, and I approach every project with a focus on
+              scalability, clean architecture, and great user experience. My
+              goal is to create impactful software that grows smoothly—both
+              technically and for the business it supports.
+            </p>
           </ScrambledText>
         </div>
 
