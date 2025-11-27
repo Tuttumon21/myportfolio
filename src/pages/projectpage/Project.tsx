@@ -14,7 +14,7 @@ const Project = () => {
 
   return (
     <div id="projects" role="project" className="w-full h-full bg-black pl-5 py-5">
-      <h2 className="max-w-7xl mx-auto text-xl md:text-5xl font-bold text-white font-bebas">
+      <h2 className="max-w-7xl mx-auto text-5xl font-bold text-white font-bebas">
         Projects
       </h2>
       <p className="max-w-7xl mx-auto text-base md:text-2xl font-bebas text-neutral-200">

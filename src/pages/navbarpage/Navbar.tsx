@@ -14,7 +14,7 @@ const menuItems = [
 ];
 
 const socialItems = [
-  { label: "GitHub", link: "https://github.com/Tuttumon21" },
+  { label: "Github", link: "https://github.com/Tuttumon21" },
   { label: "LinkedIn", link: "https://www.linkedin.com/in/rakesh-k-r" },
   { label: "Whatsapp", link: "https://wa.me/919633556219" },
   { label: "Resume", link: "https://rakesh.md" },

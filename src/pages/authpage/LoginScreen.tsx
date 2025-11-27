@@ -72,7 +72,7 @@ const LoginScreen = ({ onLoginSuccess }: LoginScreenProps) => {
         Rakesh.MD
       </span>
       <Toaster position="top-center" />
-      <div className="absolute flex flex-col justify-center items-center  w-full max-w-md rounded-2xl p-8 bg-white/0.1 border border-white/30 shadow-xl backdrop-blur-sm text-white">
+      <div className="absolute flex flex-col justify-center items-center w-full max-w-md rounded-2xl p-8 bg-white/0.1 border border-white/30 shadow-xl backdrop-blur-sm text-white">
         {/* Title */}
         <h1 className="text-2xl font-semibold mb-2">Welcome</h1>
         <p className="text-sm text-white/80 mb-6">
