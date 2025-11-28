@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import './ProfileCard.css';
+import Logork from '@/canvas/Logork';
 
 
 interface ProfileCardProps {
@@ -336,8 +337,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   const t = e.target as HTMLImageElement;
                   t.style.display = 'none';
                 }}
-              />
-             
+              /> 
             </div>
           </div>
         </section>

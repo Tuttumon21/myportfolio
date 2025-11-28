@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Toaster } from "sonner";
 import { useAuthStore } from "./store/authStore";
 
@@ -10,20 +10,70 @@ import AuthCallback from "./pages/callback/AuthCallback";
 import Home from "./pages/homepage/Home";
 import Navbar from "./pages/navbarpage/Navbar";
 import About from "./pages/aboutpage/About";
-import Experience from "./pages/experiencepage/Experience";
-import Techstack from "./pages/techstackpage/Techstack";
-import Softtool from "./pages/softtoolpage/Softtool";
 import { SmoothCursor } from "./components/ui/smooth-cursor";
-import Testimonials from "./pages/testimonialpage/Testimonials";
-import Project from "./pages/projectpage/Project";
-import Name from "./pages/namepage/Name";
-import Footer from "./pages/footerpage/Footer";
 import Progress from "./pages/progresspage/Progress";
-import Contact from "./pages/contactpage/Contact";
+
+const ExperienceLoader = () => import("./pages/experiencepage/Experience");
+const TechstackLoader = () => import("./pages/techstackpage/Techstack");
+const SofttoolLoader = () => import("./pages/softtoolpage/Softtool");
+const ProjectLoader = () => import("./pages/projectpage/Project");
+const TestimonialsLoader = () => import("./pages/testimonialpage/Testimonials");
+const ContactLoader = () => import("./pages/contactpage/Contact");
+const NameLoader = () => import("./pages/namepage/Name");
+const FooterLoader = () => import("./pages/footerpage/Footer");
+
+function SectionPlaceholder({ height = 600 }: { height?: number }) {
+  return (
+    <div
+      aria-busy="true"
+      role="status"
+      className="w-full bg-black flex items-center justify-center text-white text-xl font-semibold"
+      style={{ minHeight: height }}
+    >
+      Loading
+    </div>
+  );
+}
+
+function LazyOnVisible({
+  loader,
+  placeholder,
+}: {
+  loader: () => Promise<{ default: React.ComponentType<any> }>;
+  placeholder?: React.ReactNode;
+}) {
+  const [Comp, setComp] = useState<React.ComponentType<any> | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let obs: IntersectionObserver | null = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting && !Comp) {
+          loader().then((m) => setComp(() => m.default));
+          if (obs) {
+            obs.disconnect();
+            obs = null;
+          }
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    obs.observe(el);
+    return () => {
+      if (obs) obs.disconnect();
+    };
+  }, [loader, Comp]);
+
+  return <div ref={ref}>{Comp ? <Comp /> : placeholder ?? <SectionPlaceholder />}</div>;
+}
 
 function App() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
   const [showContent, setShowContent] = useState(false);
+  const [enableCursor, setEnableCursor] = useState(false);
 
   const handleLoginSuccess = () => {
     setShowContent(true);
@@ -36,10 +86,18 @@ function App() {
     }
   }, [isAuthenticated, isGuest]);
 
+  useEffect(() => {
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+    setEnableCursor(!prefersReduced && hasFinePointer);
+  }, []);
+
   if (!showContent) {
     return (
       <>
-        <SmoothCursor />
+        {enableCursor && <SmoothCursor />}
         <LoginScreen onLoginSuccess={handleLoginSuccess} />
       </>
     );
@@ -51,7 +109,7 @@ function App() {
       {showWelcome && <WelcomeMessage onComplete={() => {}} />}
       <Navbar />
       <main className="relative cursor-none">
-        <SmoothCursor />
+        {enableCursor && <SmoothCursor />}
         <Routes>
           <Route path="/auth/callback" element={<AuthCallback />} />
 
@@ -61,14 +119,14 @@ function App() {
               <div className="">
                 <Home />
                 <About />
-                <Experience />
-                <Techstack />
-                <Softtool />
-                <Project />
-                <Testimonials />
-                <Contact />
-                <Name />
-                <Footer onSignOut={() => setShowContent(false)} />
+                <LazyOnVisible loader={ExperienceLoader} />
+                <LazyOnVisible loader={TechstackLoader} />
+                <LazyOnVisible loader={SofttoolLoader} />
+                <LazyOnVisible loader={ProjectLoader} />
+                <LazyOnVisible loader={TestimonialsLoader} />
+                <LazyOnVisible loader={ContactLoader} />
+                <LazyOnVisible loader={NameLoader} />
+                <LazyOnVisible loader={FooterLoader} placeholder={<SectionPlaceholder height={300} />} />
               </div>
             }
           />
