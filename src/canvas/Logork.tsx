@@ -123,7 +123,7 @@ const Logork = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed inset-0 w-screen h-screen bg-black" />;
+  return <canvas ref={canvasRef} className="w-full h-full bg-black" />;
 };
 
 export default Logork;

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import './ProfileCard.css';
-import Logork from '@/canvas/Logork';
 
 
 interface ProfileCardProps {

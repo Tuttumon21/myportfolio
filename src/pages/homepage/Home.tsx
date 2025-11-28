@@ -1,8 +1,6 @@
 import { useEffect, useState, lazy, Suspense } from "react";
-const PixelBlast = lazy(() => import("@/components/PixelBlast"));
-import ProfileCard from "@/components/ProfileCard";
 import SplitText from "@/components/SplitText";
-import profile from "@/assets/images/profile.webp";
+const Logork = lazy(() => import("@/canvas/Logork"));
 
 const Home = () => {
   const [showBlast, setShowBlast] = useState(false);
@@ -21,32 +19,18 @@ const Home = () => {
     }
   }, []);
   return (
-    <div className="h-screen relative bg-black">
+    <div className="h-screen relative bg-black overflow-hidden">
       {showBlast && (
         <Suspense fallback={null}>
-          <PixelBlast
-            variant="circle"
-            pixelSize={7}
-            color="#3C14C3"
-            patternScale={3}
-            patternDensity={1.2}
-            pixelSizeJitter={0.5}
-            enableRipples
-            rippleSpeed={0.7}
-            rippleThickness={0.12}
-            rippleIntensityScale={1.5}
-            speed={0.6}
-            edgeFade={0.1}
-            transparent
-          />
+          <Logork/>
         </Suspense>
       )}
 
       {/* Limit width & align left */}
-      <div className="absolute inset-0 flex flex-col gap-2 pointer-events-auto items-start justify-center p-10">
+      <div className="absolute md:inset-0 top-10 flex flex-col gap-2 pointer-events-auto items-start justify-center p-10">
         <SplitText
           text="Rakesh K R"
-          className="text-7xl font-bebas text-center text-white"
+          className="md:text-7xl text-4xl font-bebas text-center text-white"
           delay={100}
           duration={2}
           ease="power3.out"
@@ -60,7 +44,7 @@ const Home = () => {
         />
         <SplitText
           text="Software Developer"
-          className="text-5xl font-bebas text-center text-white"
+          className="md:text-5xl text-3xl font-bebas text-center text-white"
           delay={100}
           duration={2}
           ease="power3.out"
@@ -74,16 +58,16 @@ const Home = () => {
         />
       </div>
 
-      <div className="absolute inset-0 flex flex-col gap-2 pointer-events-auto items-end justify-center p-10 right-30">
+      {/* <div className="absolute inset-0 flex flex-col gap-2 pointer-events-auto items-end justify-center p-10 right-30"> */}
         {/* Limit width & align left */}
-        <div className="lg:flex flex-col gap-2 pointer-events-auto hidden">
+        {/* <div className="lg:flex flex-col gap-2 pointer-events-auto hidden">
           <ProfileCard
             avatarUrl={profile}
             enableTilt={true}
             enableMobileTilt={false}
           />
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
       <div className="absolute inset-0 flex flex-col gap-2 pointer-events-auto items-center justify-end p-10">
         {/* Limit width & align left */}
         <div className="flex flex-col gap-2 pointer-events-auto">
