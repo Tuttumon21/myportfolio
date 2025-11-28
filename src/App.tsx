@@ -73,6 +73,7 @@ function LazyOnVisible({
 function App() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
   const [showContent, setShowContent] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [enableCursor, setEnableCursor] = useState(false);
 
   const handleLoginSuccess = () => {
@@ -84,6 +85,7 @@ function App() {
     if (isAuthenticated || isGuest) {
       setShowContent(true);
     }
+    setIsLoading(false);
   }, [isAuthenticated, isGuest]);
 
   useEffect(() => {
@@ -93,6 +95,10 @@ function App() {
     const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
     setEnableCursor(!prefersReduced && hasFinePointer);
   }, []);
+
+  if (isLoading) {
+    return <SectionPlaceholder height={window.innerHeight} />;
+  }
 
   if (!showContent) {
     return (
