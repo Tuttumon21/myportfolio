@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Toaster } from "sonner";
@@ -67,26 +68,33 @@ function LazyOnVisible({
     };
   }, [loader, Comp]);
 
-  return <div ref={ref}>{Comp ? <Comp /> : placeholder ?? <SectionPlaceholder />}</div>;
+  return (
+    <div ref={ref}>
+      {Comp ? <Comp /> : placeholder ?? <SectionPlaceholder />}
+    </div>
+  );
 }
 
-function App() {
+function AppComponent() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
-  const [showContent, setShowContent] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [enableCursor, setEnableCursor] = useState(false);
 
   const handleLoginSuccess = () => {
-    setShowContent(true);
   };
 
-  // Check if user is already authenticated or guest on app load
   useEffect(() => {
-    if (isAuthenticated || isGuest) {
-      setShowContent(true);
-    }
-    setIsLoading(false);
-  }, [isAuthenticated, isGuest]);
+    fetch("https://portfolion8n.app.n8n.cloud/webhook/website-visit", {
+      method: "GET",
+    }).catch(() => {});
+  }, []);
+
+  // Check if user is already authenticated or guest on app load
+  // useEffect(() => {
+  //   if (isAuthenticated || isGuest) {
+  //     setShowContent(true);
+  //   }
+  //   setIsLoading(false);
+  // }, [isAuthenticated, isGuest]);
 
   useEffect(() => {
     const prefersReduced = window.matchMedia(
@@ -96,11 +104,11 @@ function App() {
     setEnableCursor(!prefersReduced && hasFinePointer);
   }, []);
 
-  if (isLoading) {
-    return <SectionPlaceholder height={window.innerHeight} />;
-  }
+  // if (isLoading) {
+  //   return <SectionPlaceholder height={window.innerHeight} />;
+  // }
 
-  if (!showContent) {
+  if (!isAuthenticated && !isGuest) {
     return (
       <>
         {enableCursor && <SmoothCursor />}
@@ -132,7 +140,10 @@ function App() {
                 <LazyOnVisible loader={TestimonialsLoader} />
                 <LazyOnVisible loader={ContactLoader} />
                 <LazyOnVisible loader={NameLoader} />
-                <LazyOnVisible loader={FooterLoader} placeholder={<SectionPlaceholder height={300} />} />
+                <LazyOnVisible
+                  loader={FooterLoader}
+                  placeholder={<SectionPlaceholder height={300} />}
+                />
               </div>
             }
           />
@@ -143,5 +154,7 @@ function App() {
     </Router>
   );
 }
+
+const App = Sentry.withProfiler(AppComponent);
 
 export default App;

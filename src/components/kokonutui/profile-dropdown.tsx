@@ -4,7 +4,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import {  LogOut } from "lucide-react";
 import { AuthService } from "@/services/authService";
-import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "@/store/authStore";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +12,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-// import Gemini from "../icons/gemini";
 
 interface Profile {
   name: string;
@@ -29,22 +28,9 @@ interface MenuItem {
   icon: React.ReactNode;
   external?: boolean;
 }
-const userDetailsString = localStorage.getItem('auth-storage');
-const userDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
-const user = userDetails?.state?.user;
 
-const SAMPLE_PROFILE_DATA: Profile = {
-  name: user?.name || "User",
-  email: user?.email || "user@user.com",
-  avatar_url: user?.avatar_url || `https://avatar.iran.liara.run/public/${Math.floor(
-    Math.random() * 100
-  )}`,
-  subscription: "PRO",
-  model: "Gemini 2.0 Flash",
-};
 
 interface ProfileDropdownProps extends React.HTMLAttributes<HTMLDivElement> {
-  data?: Profile;
   showTopbar?: boolean;
   onSignOut?: () => void;
 }
@@ -52,20 +38,34 @@ interface ProfileDropdownProps extends React.HTMLAttributes<HTMLDivElement> {
 
 
 export default function ProfileDropdown({
-  data = SAMPLE_PROFILE_DATA,
   className,
   onSignOut,
   ...props
 }: ProfileDropdownProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const navigate = useNavigate();
+  const user = useAuthStore((state) => state.user);
+  const logout = useAuthStore((state) => state.logout);
+
+  const profile: Profile = React.useMemo(
+    () => ({
+      name: user?.name || "User",
+      email: user?.email || "user@user.com",
+      avatar_url:
+        user?.avatar_url ||
+        `https://avatar.iran.liara.run/public/${Math.floor(
+          Math.random() * 100
+        )}`,
+      subscription: "PRO",
+      model: "Gemini 3.0 Pro",
+    }),
+    [user]
+  );
 
   const handleSignOut = async () => {
     try {
       await AuthService.signOut();
-      localStorage.removeItem('auth-storage');
+      logout();
       onSignOut?.();
-      navigate('/');
     } catch (error) {
       console.error('Sign out failed:', error);
     }
@@ -112,18 +112,18 @@ export default function ProfileDropdown({
             >
               <div className="text-left flex-1">
                 <div className="text-sm font-medium text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight">
-                  {data.name}
+                  {profile.name}
                 </div>
                 <div className="text-xs text-zinc-500 dark:text-zinc-400 tracking-tight leading-tight">
-                  {data.email}
+                  {profile.email}
                 </div>
               </div>
               <div className="relative">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 p-0.5">
                   <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-zinc-900">
                     <img
-                      src={data.avatar_url}
-                      alt={data.name}
+                      src={profile.avatar_url}
+                      alt={profile.name}
                       width={36}
                       height={36}
                       loading="lazy"
