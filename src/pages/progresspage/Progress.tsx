@@ -4,8 +4,8 @@ import Plannings from "./Plannings";
 
 const Progress = () => {
   return (
-    <div className="bg-black relative">
-      <div className="h-screen">
+    <div className="bg-black relative overflow-hidden">
+      <div className="">
         <Logork />
       </div>
       <div className="">

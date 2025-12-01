@@ -84,6 +84,24 @@ const initialTasks: Task[] = [
         title: "Supabase and Github integration",
         description:
           "Integrate Supabase with Github for database and version control",
+        status: "completed",
+        priority: "high",
+        tools: ["Host", "Render"],
+      },
+      {
+        id: "2.2",
+        title: "N8N Configuration",
+        description:
+          "N8N AI Automation Workflow",
+        status: "in-progress",
+        priority: "high",
+        tools: ["AI", "N8N"],
+      },
+      {
+        id: "2.3",
+        title: "Render Hosting",
+        description:
+          "Static Website Hosting in Render Platform",
         status: "in-progress",
         priority: "high",
         tools: ["Host", "Render"],

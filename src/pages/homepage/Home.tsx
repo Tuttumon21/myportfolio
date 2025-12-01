@@ -31,10 +31,10 @@ const Home = () => {
         <SplitText
           text="Rakesh K R"
           className="md:text-7xl text-4xl font-bebas text-center text-white"
-          delay={100}
+          delay={500}
           duration={2}
           ease="power3.out"
-          splitType="chars"
+          splitType="words"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
@@ -48,7 +48,7 @@ const Home = () => {
           delay={100}
           duration={2}
           ease="power3.out"
-          splitType="chars"
+          splitType="words"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
