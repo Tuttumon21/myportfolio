@@ -1,4 +1,3 @@
-import { WorldMap } from "@/components/map";
 import { WobbleCard } from "@/components/ui/wobble-card";
 import { Mail, MapPin, Phone, Linkedin, Github } from "lucide-react";
 
@@ -13,8 +12,8 @@ const Contact = () => {
           Let's build something amazing together
         </p>
       </div>
-      <div className="grid md:grid-cols-2 md:grid-rows-2 grid-cols-1 gap-4 h-full md:h-screen max-w-7xl mx-auto">
-        <WobbleCard containerClassName="row-span-2 bg-blue-50" className="bg-black min-h-screen pointer-events-auto">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-4 h-full md:h-screen max-w-7xl mx-auto">
+        <WobbleCard containerClassName="bg-blue-50" className="bg-black h-full pointer-events-auto">
           <iframe
             allow="geolocation; microphone; camera"
             src="https://9t7yum45.forms.app/form/6926f83e9a8ceb000262085a"
@@ -23,49 +22,7 @@ const Contact = () => {
           ></iframe>
         </WobbleCard>
         <WobbleCard containerClassName="bg-blue-50" className="bg-black">
-          <WorldMap
-            dots={[
-              {
-                start: {
-                  lat: -6.0,
-                  lng: 79.244,
-                  label: "Kerala",
-                },
-                end: {
-                  lat: 46.5074456,
-                  lng: -0.9277653,
-                  label: "London",
-                },
-              },
-              {
-                start: {
-                  lat: -6.0,
-                  lng: 79.244,
-                  label: "Kerala",
-                },
-                end: {
-                  lat: 7.0742823,
-                  lng: 57.1885387,
-                  label: "Dubai",
-                },
-              },
-              {
-                start: {
-                  lat: -6.0,
-                  lng: 79.244,
-                  label: "Kerala",
-                },
-                end: {
-                  lat: 35.0742823,
-                  lng: -73.1885387,
-                  label: "New York",
-                },
-              },
-            ]}
-          />
-        </WobbleCard>
-        <WobbleCard containerClassName="bg-blue-50" className="bg-black">
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col justify-center h-full gap-3">
             <button
               onClick={() =>
                 (window.location.href = "mailto:mrrak007kr@gmail.com")

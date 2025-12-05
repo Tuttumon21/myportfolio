@@ -8,6 +8,9 @@ const Testimonials = () => {
         <p className="text-sm md:text-base text-neutral-200 font-bebas">
           Feedback that fuels my growth
         </p>
+        <p className="text-sm md:text-base text-neutral-200 font-sansita">
+          [ Demo Content - Sumbit Your Feedback in Contact Section ]
+        </p>
       </div>
       <StaggerTestimonials />
     </div>

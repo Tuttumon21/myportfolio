@@ -11,7 +11,6 @@ import AuthCallback from "./pages/callback/AuthCallback";
 import Home from "./pages/homepage/Home";
 import Navbar from "./pages/navbarpage/Navbar";
 import About from "./pages/aboutpage/About";
-import { SmoothCursor } from "./components/ui/smooth-cursor";
 import Progress from "./pages/progresspage/Progress";
 
 const ExperienceLoader = () => import("./pages/experiencepage/Experience");
@@ -77,7 +76,6 @@ function LazyOnVisible({
 
 function AppComponent() {
   const { isAuthenticated, isGuest, showWelcome } = useAuthStore();
-  const [enableCursor, setEnableCursor] = useState(false);
 
   const handleLoginSuccess = () => {
   };
@@ -96,14 +94,6 @@ function AppComponent() {
   //   setIsLoading(false);
   // }, [isAuthenticated, isGuest]);
 
-  useEffect(() => {
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
-    setEnableCursor(!prefersReduced && hasFinePointer);
-  }, []);
-
   // if (isLoading) {
   //   return <SectionPlaceholder height={window.innerHeight} />;
   // }
@@ -111,7 +101,6 @@ function AppComponent() {
   if (!isAuthenticated && !isGuest) {
     return (
       <>
-        {enableCursor && <SmoothCursor />}
         <LoginScreen onLoginSuccess={handleLoginSuccess} />
       </>
     );
@@ -122,8 +111,7 @@ function AppComponent() {
 
       {showWelcome && <WelcomeMessage onComplete={() => {}} />}
       <Navbar />
-      <main className="relative cursor-none">
-        {enableCursor && <SmoothCursor />}
+      <main className="relative">
         <Routes>
           <Route path="/auth/callback" element={<AuthCallback />} />
 
