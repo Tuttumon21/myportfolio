@@ -81,11 +81,11 @@ const DefaultCursorSVG: FC = () => {
 export function SmoothCursor({
   cursor = <DefaultCursorSVG />,
   springConfig = {
-    damping: 50,
-    stiffness: 1000,
-    mass: 0.1,
-    restDelta: 0.00001,
-  },
+  stiffness: 1200,   // lower = softer
+  damping: 80,      // higher = less bounce
+  mass: 0.2,        // slightly heavier, smoother motion
+  restDelta: 0.001, // more precise resting
+},
 }: SmoothCursorProps) {
   const lastMousePos = useRef<Position>({ x: 0, y: 0 })
   const velocity = useRef<Position>({ x: 0, y: 0 })

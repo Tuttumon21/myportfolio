@@ -1,6 +1,6 @@
 import LaserFlow from "@/components/LaserFlow";
 import { useRef } from "react";
-import image from "@/assets/images/icons.webp";
+// import image from "@/assets/images/icons.webp";
 import ScrambledText from "@/components/ScrambledText";
 
 const About = () => {
@@ -63,7 +63,7 @@ const About = () => {
             <span className="text-4xl font-bebas">About ME</span>
             <br />
             <br />
-            <p className="break-normal whitespace-normal">
+            <p className="break-normal whitespace-normal font-sansita">
               I’m a Jr. Software Developer with 2 years of experience building
               scalable, user-focused applications across web and cloud
               platforms. I work with modern stacks including React, Vite,
@@ -80,7 +80,7 @@ const About = () => {
           </ScrambledText>
         </div>
 
-        <img
+        {/* <img
           ref={revealImgRef}
           src={image}
           alt="Reveal effect"
@@ -96,7 +96,7 @@ const About = () => {
               maskRepeat: "no-repeat",
             } as React.CSSProperties
           }
-        />
+        /> */}
       </div>
     </>
   );

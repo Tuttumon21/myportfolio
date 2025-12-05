@@ -29,7 +29,7 @@ const testimonials = [
   {
     tempId: 3,
     testimonial:
-      "He automated several workflows using n8n, saving our team countless hours. Rakesh’s problem-solving ability is world-class.",
+      "Working with Rakesh always feels effortless. He understands both the technical and visual side of a product, and that’s rare.",
     by: "Mia, Operations Head at StreamFlow",
     imgSrc: "https://avatar.iran.liara.run/public",
   },
