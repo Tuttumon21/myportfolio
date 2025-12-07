@@ -13,7 +13,7 @@ const Contact = () => {
         </p>
       </div>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-4 h-full md:h-screen max-w-7xl mx-auto">
-        <WobbleCard containerClassName="bg-blue-50" className="bg-black h-full pointer-events-auto">
+        <WobbleCard containerClassName="bg-blue-50" className="bg-black md:h-full h-screen pointer-events-auto">
           <iframe
             allow="geolocation; microphone; camera"
             src="https://9t7yum45.forms.app/form/6926f83e9a8ceb000262085a"
